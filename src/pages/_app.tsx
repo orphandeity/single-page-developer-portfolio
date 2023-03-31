@@ -9,7 +9,7 @@ const spaceGrotesk = Space_Grotesk({
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <div className={`${spaceGrotesk.variable} font-sans`}>
+    <div className={`${spaceGrotesk.variable} bg-_black font-sans`}>
       <Component {...pageProps} />
     </div>
   );

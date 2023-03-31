@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import { Github, FrontendMentor, LinkedIn, Twitter } from "../lib/icons";
 
 const Home: NextPage = () => {
   return (
@@ -14,17 +15,38 @@ const Home: NextPage = () => {
           href="/favicon-32x32.png"
         />
       </Head>
-      <main>
-        <h1>adamkeyes</h1>
+      <main className="container mx-auto">
+        <header className="flex items-center justify-between py-8">
+          <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px] text-white">
+            adamkeyes
+          </h1>
+          <menu className="flex gap-8">
+            <Github />
+            <FrontendMentor />
+            <LinkedIn />
+            <Twitter />
+          </menu>
+        </header>
 
-        <p>Nice to meet you! I&apos;m Adam Keyes.</p>
+        <div className="my-28 flex flex-col items-start gap-12 text-white">
+          <h2 className="heading-xl">
+            Nice to meet you!
+            <br /> I&apos;m{" "}
+            <span className="underline decoration-_green underline-offset-[20px]">
+              Adam Keyes
+            </span>
+            .
+          </h2>
 
-        <p>
-          Based in the UK, I&apos;m a front-end developer passionate about
-          building accessible web apps that users love.
-        </p>
+          <p className="max-w-md text-lg leading-7">
+            Based in the UK, I&apos;m a front-end developer passionate about
+            building accessible web apps that users love.
+          </p>
 
-        <p>Contact me</p>
+          <button>Contact me</button>
+        </div>
+
+        <hr />
 
         <div>
           <p>HTML</p> <p>4 Years Experience</p>
