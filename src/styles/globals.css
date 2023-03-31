@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.heading-xl {
+  @apply text-_heading-xl font-bold leading-_heading-xl tracking-_heading-xl;
+}
+
+.heading-lg {
+  @apply text-_heading-lg font-bold leading-_heading-lg tracking-_heading-lg;
+}
+
+.heading-md {
+  @apply text-_heading-md font-bold leading-_heading-md;
+}
