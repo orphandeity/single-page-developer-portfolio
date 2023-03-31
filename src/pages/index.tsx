@@ -2,6 +2,8 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import { Github, FrontendMentor, LinkedIn, Twitter } from "../lib/icons";
 import Button from "~/components/Button";
+import { projects } from "~/lib/data";
+import ProjectCard from "~/components/ProjectCard";
 
 const Home: NextPage = () => {
   return (
@@ -16,20 +18,19 @@ const Home: NextPage = () => {
           href="/favicon-32x32.png"
         />
       </Head>
-      <main className="container mx-auto">
-        <header className="flex items-center justify-between py-8">
-          <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px] text-white">
-            adamkeyes
-          </h1>
-          <menu className="flex gap-8">
-            <Github />
-            <FrontendMentor />
-            <LinkedIn />
-            <Twitter />
-          </menu>
-        </header>
-
-        <div className="my-28 flex flex-col items-start gap-12 text-white">
+      <header className="flex items-center justify-between py-8">
+        <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
+          adamkeyes
+        </h1>
+        <menu className="flex gap-8">
+          <Github />
+          <FrontendMentor />
+          <LinkedIn />
+          <Twitter />
+        </menu>
+      </header>
+      <main>
+        <div className="my-28 flex flex-col items-start gap-12">
           <h2 className="heading-xl">
             Nice to meet you!
             <br /> I&apos;m{" "}
@@ -39,7 +40,7 @@ const Home: NextPage = () => {
             .
           </h2>
 
-          <p className="max-w-md text-lg leading-7">
+          <p className="max-w-md text-lg leading-7 text-_gray">
             Based in the UK, I&apos;m a front-end developer passionate about
             building accessible web apps that users love.
           </p>
@@ -49,65 +50,48 @@ const Home: NextPage = () => {
 
         <hr />
 
-        <div>
-          <p>HTML</p> <p>4 Years Experience</p>
+        <div className="mt-[72px] grid grid-cols-3 gap-16">
+          <div className="flex  flex-col gap-[14px]">
+            <p className="heading-lg">HTML</p>
+            <p className="text-_gray">4 Years Experience</p>
+          </div>
+          <div className="flex  flex-col gap-[14px]">
+            <p className="heading-lg">CSS</p>
+            <p className="text-_gray">4 Years Experience</p>
+          </div>
+          <div className="flex  flex-col gap-[14px]">
+            <p className="heading-lg">JavaScript</p>
+            <p className="text-_gray">4 Years Experience</p>
+          </div>
+          <div className="flex  flex-col gap-[14px]">
+            <p className="heading-lg">Accessibility</p>
+            <p className="text-_gray">4 Years Experience</p>
+          </div>
+          <div className="flex  flex-col gap-[14px]">
+            <p className="heading-lg">React</p>
+            <p className="text-_gray">3 Years Experience</p>
+          </div>
+          <div className="flex  flex-col gap-[14px]">
+            <p className="heading-lg">Sass</p>
+            <p className="text-_gray">3 Years Experience</p>
+          </div>
         </div>
-        <div>
-          <p>CSS</p> <p>4 Years Experience</p>
-        </div>
-        <div>
-          <p>JavaScript</p> <p>4 Years Experience</p>
-        </div>
-        <div>
-          <p>Accessibility</p> <p>4 Years Experience</p>
-        </div>
-        <div>
-          <p>React</p> <p>3 Years Experience</p>
-        </div>
-        <div>
-          <p>Sass</p> <p>3 Years Experience</p>
-        </div>
+      </main>
 
-        <p>Projects</p>
-        <p>Contact me</p>
-        <div>
-          <p>Design portfolio</p>
-          <p>HTML CSS</p>
-          <p>View project</p>
-          <p>View code</p>
+      <section className="mt-36 flex flex-col gap-20">
+        <div className="flex items-center justify-between">
+          <h3 className="heading-xl">Projects</h3>
+          <Button text="contact me" />
         </div>
-        <div>
-          <p>E-learning landing page</p>
-          <p>HTML CSS</p>
-          <p>View project</p>
-          <p>View code</p>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-16">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
         </div>
-        <div>
-          <p>Todo web app</p>
-          <p>HTML CSS JavaScript</p>
-          <p>View project</p>
-          <p>View code</p>
-        </div>
-        <div>
-          <p>Entertainment web app</p>
-          <p>HTML CSS JavaScript</p>
-          <p>View project</p>
-          <p>View code</p>
-        </div>
-        <div>
-          <p>Memory Game</p>
-          <p>HTML CSS JavaScript</p>
-          <p>View project</p>
-          <p>View code</p>
-        </div>
-        <div>
-          <p>Art gallery showcase</p>
-          <p>HTML CSS JavaScript</p>
-          <p>View project</p>
-          <p>View code</p>
-        </div>
+      </section>
 
-        <p>Contact</p>
+      <section>
+        <h3 className="heading-xl">Contact</h3>
         <p>
           I would love to hear about your project and how I could help. Please
           fill in the form, and I&apos;ll get back to you as soon as possible.
@@ -118,8 +102,10 @@ const Home: NextPage = () => {
           <p>Message</p>
         </div>
         <p>Send message</p>
+      </section>
+      <footer>
         <p>adamkeyes</p>
-      </main>
+      </footer>
     </>
   );
 };
