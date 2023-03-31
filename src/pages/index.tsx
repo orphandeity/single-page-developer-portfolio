@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { Github, FrontendMentor, LinkedIn, Twitter } from "../lib/icons";
+import Button from "~/components/Button";
 
 const Home: NextPage = () => {
   return (
@@ -43,7 +44,7 @@ const Home: NextPage = () => {
             building accessible web apps that users love.
           </p>
 
-          <button>Contact me</button>
+          <Button text="contact me" />
         </div>
 
         <hr />
