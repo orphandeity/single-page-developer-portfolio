@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       </Head>
       <header className="container mx-auto flex items-center justify-between py-8">
         <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
-          adamkeyes
+          jeffwilliams
         </h1>
         <menu className="flex gap-8">
           <Github />
@@ -36,14 +36,14 @@ const Home: NextPage = () => {
             Nice to meet you!
             <br /> I&apos;m{" "}
             <span className="underline decoration-_green underline-offset-[20px]">
-              Adam Keyes
+              Jeff Williams
             </span>
             .
           </h2>
 
           <p className="max-w-md text-lg leading-7 text-_gray">
-            Based in the UK, I&apos;m a front-end developer passionate about
-            building accessible web apps that users love.
+            Based in the California, I&apos;m a front-end developer passionate
+            about building accessible web apps that users love.
           </p>
 
           <Button text="contact me" />
@@ -108,7 +108,7 @@ const Home: NextPage = () => {
       <footer className="bg-_darkgray">
         <div className="container mx-auto flex items-center justify-between py-8">
           <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
-            adamkeyes
+            jeffwilliams
           </h1>
           <menu className="flex gap-8">
             <Github />
