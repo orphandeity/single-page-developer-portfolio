@@ -10,9 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <div className={`${spaceGrotesk.variable} bg-_black font-sans text-white`}>
-      <div className="container mx-auto">
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     </div>
   );
 };

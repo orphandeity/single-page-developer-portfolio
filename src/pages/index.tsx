@@ -4,6 +4,7 @@ import { Github, FrontendMentor, LinkedIn, Twitter } from "../lib/icons";
 import Button from "~/components/Button";
 import { projects } from "~/lib/data";
 import ProjectCard from "~/components/ProjectCard";
+import ContactForm from "~/components/ContactForm";
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
           href="/favicon-32x32.png"
         />
       </Head>
-      <header className="flex items-center justify-between py-8">
+      <header className="container mx-auto flex items-center justify-between py-8">
         <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
           adamkeyes
         </h1>
@@ -29,7 +30,7 @@ const Home: NextPage = () => {
           <Twitter />
         </menu>
       </header>
-      <main>
+      <main className="container mx-auto">
         <div className="my-28 flex flex-col items-start gap-12">
           <h2 className="heading-xl">
             Nice to meet you!
@@ -78,7 +79,7 @@ const Home: NextPage = () => {
         </div>
       </main>
 
-      <section className="mt-36 flex flex-col gap-20">
+      <section className="container mx-auto my-36 flex flex-col gap-20">
         <div className="flex items-center justify-between">
           <h3 className="heading-xl">Projects</h3>
           <Button text="contact me" />
@@ -90,21 +91,32 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section>
-        <h3 className="heading-xl">Contact</h3>
-        <p>
-          I would love to hear about your project and how I could help. Please
-          fill in the form, and I&apos;ll get back to you as soon as possible.
-        </p>
-        <div>
-          <p>Name</p>
-          <p>Email</p>
-          <p>Message</p>
+      <section className="bg-_darkgray">
+        <div className="container mx-auto grid grid-cols-2 gap-40 py-20">
+          <div>
+            <h3 className="heading-xl">Contact</h3>
+            <p className="mt-9 max-w-md text-lg text-_gray">
+              I would love to hear about your project and how I could help.
+              Please fill in the form, and I&apos;ll get back to you as soon as
+              possible.
+            </p>
+          </div>
+          <ContactForm />
         </div>
-        <p>Send message</p>
+        <hr />
       </section>
-      <footer>
-        <p>adamkeyes</p>
+      <footer className="bg-_darkgray">
+        <div className="container mx-auto flex items-center justify-between py-8">
+          <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
+            adamkeyes
+          </h1>
+          <menu className="flex gap-8">
+            <Github />
+            <FrontendMentor />
+            <LinkedIn />
+            <Twitter />
+          </menu>
+        </div>
       </footer>
     </>
   );
