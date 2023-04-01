@@ -9,6 +9,7 @@ export default {
         _darkgray: "#242424",
         _gray: "#D9D9D9",
         _green: "#4EE1A0",
+        _error: "#FF6F5B",
       },
       fontFamily: {
         sans: ["var(--font-space-grotesk)"],

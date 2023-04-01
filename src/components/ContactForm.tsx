@@ -1,6 +1,8 @@
+import { Formik } from "formik";
 import Button from "./Button";
 import * as Yup from "yup";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import clsx from "clsx";
+import { AlertCircle } from "lucide-react";
 
 const ContactForm = () => {
   return (
@@ -15,47 +17,103 @@ const ContactForm = () => {
           .max(25, "Must be 25 characters or less")
           .required("Please provide your name"),
         email: Yup.string()
-          .email("Invalid email address")
+          .email("Sorry, invalid format here")
           .required("Please provide your email address"),
-        message: Yup.string().min(15, "Must be at least 15 characters"),
+        message: Yup.string()
+          .min(15, "Must be at least 15 characters")
+          .max(255, "Must be less than 255 characters")
+          .required("Please provide a short message"),
       })}
       onSubmit={(values) => {
         console.table(values);
       }}
     >
-      <Form className="flex flex-col items-end">
-        <div className="flex w-full flex-col border-b border-b-white px-6 py-4">
-          <Field
-            type="text"
-            id="name"
-            name="name"
-            placeholder="name"
-            className="border-none bg-transparent placeholder:uppercase placeholder:text-_gray"
-          />
-          <ErrorMessage name="name" />
-        </div>
-        <div className="flex w-full flex-col border-b border-b-white px-6 py-4">
-          <Field
-            type="email"
-            id="email"
-            name="email"
-            placeholder="email"
-            className="border-none bg-transparent placeholder:uppercase placeholder:text-_gray"
-          />
-          <ErrorMessage name="email" />
-        </div>
-        <div className="flex w-full flex-col border-b border-b-white px-6 py-4">
-          <Field
-            name="message"
-            id="message"
-            as="textarea"
-            placeholder="message"
-            className="border-none bg-transparent placeholder:uppercase placeholder:text-_gray"
-          />
-          <ErrorMessage name="message" />
-        </div>
-        <Button type="submit" text="send message" />
-      </Form>
+      {(formik) => (
+        <form
+          onSubmit={formik.handleSubmit}
+          className="flex h-[327px] flex-col items-end justify-between"
+        >
+          <div className="flex w-full flex-col">
+            <div className="flex items-center">
+              <input
+                type="text"
+                id="name"
+                placeholder="name"
+                {...formik.getFieldProps("name")}
+                className="flex-1 border-none bg-transparent uppercase placeholder:uppercase placeholder:text-_gray"
+              />
+              {formik.touched.name && formik.errors.name ? (
+                <AlertCircle className="text-_error" />
+              ) : null}
+            </div>
+            <hr
+              className={clsx([
+                formik.touched.name && formik.errors.name && "border-_error",
+                formik.touched.name && !formik.errors.name && "border-_green",
+              ])}
+            />
+            {formik.touched.name && formik.errors.name ? (
+              <div className="pt-1 text-right text-xs text-_error">
+                {formik.errors.name}
+              </div>
+            ) : null}
+          </div>
+          <div className="flex w-full flex-col">
+            <div className="flex items-center">
+              <input
+                type="email"
+                id="email"
+                placeholder="email"
+                {...formik.getFieldProps("email")}
+                className="flex-1 border-none bg-transparent uppercase placeholder:uppercase placeholder:text-_gray"
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <AlertCircle className="text-_error" />
+              ) : null}
+            </div>
+            <hr
+              className={clsx([
+                formik.touched.email && formik.errors.email && "border-_error",
+                formik.touched.email && !formik.errors.email && "border-green",
+              ])}
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div className="pt-1 text-right text-xs text-_error">
+                {formik.errors.email}
+              </div>
+            ) : null}
+          </div>
+          <div className="flex w-full flex-col">
+            <div className="flex items-center">
+              <textarea
+                id="message"
+                placeholder="message"
+                {...formik.getFieldProps("message")}
+                className="flex-1 border-none bg-transparent uppercase placeholder:uppercase placeholder:text-_gray"
+              />
+              {formik.touched.message && formik.errors.message ? (
+                <AlertCircle className="text-_error" />
+              ) : null}
+            </div>
+            <hr
+              className={clsx([
+                formik.touched.message &&
+                  formik.errors.message &&
+                  "border-_error",
+                formik.touched.message &&
+                  !formik.errors.message &&
+                  "border-_green",
+              ])}
+            />
+            {formik.touched.message && formik.errors.message ? (
+              <div className="pt-1 text-right text-xs text-_error">
+                {formik.errors.message}
+              </div>
+            ) : null}
+          </div>
+          <Button type="submit" text="send message" />
+        </form>
+      )}
     </Formik>
   );
 };
