@@ -20,9 +20,9 @@ const Home: NextPage = () => {
         />
       </Head>
       <header className="container mx-auto flex items-center justify-between py-8">
-        <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
+        <span className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
           jeffwilliams
-        </h1>
+        </span>
         <menu className="flex gap-8">
           <Github />
           <FrontendMentor />
@@ -32,18 +32,18 @@ const Home: NextPage = () => {
       </header>
       <main className="container mx-auto">
         <div className="my-28 flex flex-col items-start gap-12">
-          <h2 className="heading-xl">
+          <h1 className="heading-xl">
             Nice to meet you!
             <br /> I&apos;m{" "}
             <span className="underline decoration-_green underline-offset-[20px]">
               Jeff Williams
             </span>
             .
-          </h2>
+          </h1>
 
           <p className="max-w-md text-lg leading-7 text-_gray">
-            Based in the California, I&apos;m a front-end developer passionate
-            about building accessible web apps that users love.
+            Based in California, I&apos;m a front-end developer passionate about
+            building accessible web apps that users love.
           </p>
 
           <Button text="contact me" />
@@ -81,10 +81,10 @@ const Home: NextPage = () => {
 
       <section className="container mx-auto my-36 flex flex-col gap-20">
         <div className="flex items-center justify-between">
-          <h3 className="heading-xl">Projects</h3>
+          <h2 className="heading-xl">Projects</h2>
           <Button text="contact me" />
         </div>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
@@ -94,7 +94,7 @@ const Home: NextPage = () => {
       <section className="bg-_darkgray">
         <div className="container mx-auto grid grid-cols-2 gap-40 py-20">
           <div>
-            <h3 className="heading-xl">Contact</h3>
+            <h2 className="heading-xl">Contact</h2>
             <p className="mt-9 max-w-md text-lg text-_gray">
               I would love to hear about your project and how I could help.
               Please fill in the form, and I&apos;ll get back to you as soon as
@@ -107,9 +107,9 @@ const Home: NextPage = () => {
       </section>
       <footer className="bg-_darkgray">
         <div className="container mx-auto flex items-center justify-between py-8">
-          <h1 className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
+          <span className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
             jeffwilliams
-          </h1>
+          </span>
           <menu className="flex gap-8">
             <Github />
             <FrontendMentor />

@@ -1,8 +1,9 @@
 import type { Project } from "~/lib/data";
-import Button from "./Button";
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
 import clsx from "clsx";
+import Button from "./Button";
+import { type Size, useWindowSize } from "~/lib/useWindowSize";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,16 +12,22 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [active, setActive] = useState(false);
 
-  const Overlay = () => (
-    <div
-      className={clsx([
-        "absolute inset-0 flex-col items-center justify-center gap-12 bg-_black/80",
-        active ? "flex" : "hidden",
-      ])}
+  const size: Size = useWindowSize();
+
+  const desktopStyles = [
+    "absolute inset-0 flex-col items-center justify-center gap-12 bg-_black/80",
+    active ? "flex" : "hidden",
+  ];
+
+  const mobileStyles = "flex gap-8 pt-4";
+
+  const ActionButtons = () => (
+    <fieldset
+      className={clsx(size.width >= 1024 ? desktopStyles : mobileStyles)}
     >
       <Button text="view project" />
       <Button text="view code" />
-    </div>
+    </fieldset>
   );
 
   return (
@@ -31,7 +38,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         onPointerLeave={() => setActive(false)}
       >
         <Image src={project.image} alt="" width={686} height={506} />
-        <Overlay />
+        {size.width >= 1024 && <ActionButtons />}
       </div>
       <div className="flex flex-col gap-2">
         <h4 className="heading-md uppercase">{project.title}</h4>
@@ -40,6 +47,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <li key={text}>{text}</li>
           ))}
         </ul>
+        {size.width < 1024 && <ActionButtons />}
       </div>
     </div>
   );
