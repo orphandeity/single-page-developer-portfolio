@@ -5,6 +5,8 @@ import Button from "~/components/Button";
 import { projects } from "~/lib/data";
 import ProjectCard from "~/components/ProjectCard";
 import ContactForm from "~/components/ContactForm";
+import Link from "next/link";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -19,37 +21,48 @@ const Home: NextPage = () => {
           href="/favicon-32x32.png"
         />
       </Head>
-      <header className="container mx-auto flex items-center justify-between py-8">
-        <span className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
-          jeffwilliams
-        </span>
-        <menu className="flex gap-8">
-          <Github />
-          <FrontendMentor />
-          <LinkedIn />
-          <Twitter />
-        </menu>
-      </header>
-      <main className="container mx-auto">
-        <div className="my-28 flex flex-col items-start gap-12">
-          <h1 className="heading-xl">
-            Nice to meet you!
-            <br /> I&apos;m{" "}
-            <span className="underline decoration-_green underline-offset-[20px]">
-              Jeff Williams
-            </span>
-            .
-          </h1>
 
-          <p className="max-w-md text-lg leading-7 text-_gray">
-            Based in California, I&apos;m a front-end developer passionate about
-            building accessible web apps that users love.
-          </p>
+      <main className="container mx-auto max-w-5xl">
+        <div className="relative mb-28 flex justify-end">
+          <div className="absolute inset-0 flex flex-col items-start gap-12">
+            <header className="flex w-full items-center justify-between py-8">
+              <span className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
+                adamkeyes
+              </span>
+              <menu className="mr-8 flex gap-8">
+                <Github />
+                <FrontendMentor />
+                <LinkedIn />
+                <Twitter />
+              </menu>
+            </header>
+            <h1 className="heading-xl mt-16">
+              Nice to meet you!
+              <br /> I&apos;m{" "}
+              <span className="underline decoration-_green underline-offset-[20px]">
+                Adam Keyes
+              </span>
+              .
+            </h1>
 
-          <Button text="contact me" />
+            <p className="max-w-md text-lg leading-7 text-_gray">
+              Based in the UK, I&apos;m a front-end developer passionate about
+              building accessible web apps that users love.
+            </p>
+
+            <Link href={"#contact"}>
+              <Button text="contact me" />
+            </Link>
+          </div>
+          <Image
+            src={"/image-profile-desktop.webp"}
+            alt=""
+            width={445}
+            height={720}
+          />
         </div>
 
-        <hr />
+        <hr className="border-_gray" />
 
         <div className="mt-[72px] grid grid-cols-3 gap-16">
           <div className="flex  flex-col gap-[14px]">
@@ -79,10 +92,12 @@ const Home: NextPage = () => {
         </div>
       </main>
 
-      <section className="container mx-auto my-36 flex flex-col gap-20">
+      <section className="container mx-auto my-36 flex max-w-5xl flex-col gap-20">
         <div className="flex items-center justify-between">
           <h2 className="heading-xl">Projects</h2>
-          <Button text="contact me" />
+          <Link href={"#contact"}>
+            <Button text="contact me" />
+          </Link>
         </div>
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2">
           {projects.map((project) => (
@@ -91,8 +106,8 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="bg-_darkgray">
-        <div className="container mx-auto grid grid-cols-2 gap-40 py-20">
+      <section id="contact" className="bg-_darkgray">
+        <div className="container mx-auto grid max-w-5xl grid-cols-2 gap-40 py-20">
           <div>
             <h2 className="heading-xl">Contact</h2>
             <p className="mt-9 max-w-md text-lg text-_gray">
@@ -106,9 +121,9 @@ const Home: NextPage = () => {
         <hr />
       </section>
       <footer className="bg-_darkgray">
-        <div className="container mx-auto flex items-center justify-between py-8">
+        <div className="container mx-auto flex max-w-5xl items-center justify-between py-8">
           <span className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
-            jeffwilliams
+            adamkeyes
           </span>
           <menu className="flex gap-8">
             <Github />
