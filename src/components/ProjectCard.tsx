@@ -23,7 +23,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   const ActionButtons = () => (
     <fieldset
-      className={clsx(size.width >= 1024 ? desktopStyles : mobileStyles)}
+      className={clsx(size.width! >= 1024 ? desktopStyles : mobileStyles)}
     >
       <Button text="view project" />
       <Button text="view code" />
@@ -38,7 +38,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         onPointerLeave={() => setActive(false)}
       >
         <Image src={project.image} alt="" width={686} height={506} />
-        {size.width >= 1024 && <ActionButtons />}
+        {size.width! >= 1024 && <ActionButtons />}
       </div>
       <div className="flex flex-col gap-2">
         <h4 className="heading-md uppercase">{project.title}</h4>
@@ -47,7 +47,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <li key={text}>{text}</li>
           ))}
         </ul>
-        {size.width < 1024 && <ActionButtons />}
+        {size.width! < 1024 && <ActionButtons />}
       </div>
     </div>
   );
