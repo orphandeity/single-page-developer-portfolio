@@ -31,7 +31,7 @@ const ContactForm = () => {
       {(formik) => (
         <form
           onSubmit={formik.handleSubmit}
-          className="flex h-[327px] flex-col items-end justify-between"
+          className="flex h-[327px] w-[445px] flex-col items-end justify-between"
         >
           <div className="flex w-full flex-col">
             <div className="flex items-center">
