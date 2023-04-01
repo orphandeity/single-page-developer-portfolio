@@ -25,8 +25,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <fieldset
       className={clsx(size.width! >= 1024 ? desktopStyles : mobileStyles)}
     >
-      <Button text="view project" />
-      <Button text="view code" />
+      <a href={project.projectUrl}>
+        <Button text="view project" />
+      </a>
+      <a href={project.codeUrl}>
+        <Button text="view code" />
+      </a>
     </fieldset>
   );
 
