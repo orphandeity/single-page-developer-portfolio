@@ -28,6 +28,11 @@ export default {
         "_heading-xl": "-2.5px",
         "_heading-lg": "-1.5px",
       },
+      screens: {
+        desktop: "1440px",
+        tablet: "768px",
+        mobile: "375px",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

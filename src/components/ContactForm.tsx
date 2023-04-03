@@ -31,7 +31,7 @@ const ContactForm = () => {
       {(formik) => (
         <form
           onSubmit={formik.handleSubmit}
-          className="flex h-[327px] w-[445px] flex-col items-end justify-between"
+          className="flex w-full flex-col items-end justify-between gap-8 tablet:max-w-md desktop:max-w-full"
         >
           <div className="flex w-full flex-col">
             <div className="flex items-center">
@@ -58,6 +58,7 @@ const ContactForm = () => {
               </div>
             ) : null}
           </div>
+
           <div className="flex w-full flex-col">
             <div className="flex items-center">
               <input
@@ -83,10 +84,12 @@ const ContactForm = () => {
               </div>
             ) : null}
           </div>
+
           <div className="flex w-full flex-col">
             <div className="flex items-center">
               <textarea
                 id="message"
+                rows={4}
                 placeholder="message"
                 {...formik.getFieldProps("message")}
                 className="flex-1 border-none bg-transparent uppercase placeholder:uppercase placeholder:text-_gray"
@@ -111,6 +114,7 @@ const ContactForm = () => {
               </div>
             ) : null}
           </div>
+
           <Button type="submit" text="send message" />
         </form>
       )}

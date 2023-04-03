@@ -15,6 +15,8 @@ import Button from "~/components/Button";
 import ProjectCard from "~/components/ProjectCard";
 import ContactForm from "~/components/ContactForm";
 import { projects } from "~/lib/data";
+import Footer from "~/components/Footer";
+import HeroSection from "~/components/HeroSection";
 
 const Home: NextPage = () => {
   const size: Size = useWindowSize();
@@ -31,92 +33,13 @@ const Home: NextPage = () => {
           href="/favicon-32x32.png"
         />
       </Head>
+      <HeroSection />
 
-      <main className="container max-w-6xl px-8 lg:mx-auto">
-        <div className="relative mb-28 flex justify-end">
-          <div className="absolute inset-0 ">
-            <header className="flex w-full items-center justify-between pb-16 pt-10">
-              <span className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
-                adamkeyes
-              </span>
-              <menu className="z-50 mr-8 flex gap-8">
-                <Github />
-                <FrontendMentor />
-                <LinkedIn />
-                <Twitter />
-              </menu>
-            </header>
-            <div className="relative z-20 flex flex-col items-start gap-12">
-              <div className="absolute -translate-x-1/2">
-                <PatternRings />
-              </div>
-              <h1 className="heading-xl mt-16 max-w-xl lg:max-w-3xl">
-                Nice to {size.width! < 1024 && <br />} meet you! I&apos;m{" "}
-                <span className="underline decoration-_green underline-offset-[20px]">
-                  Adam Keyes
-                </span>
-                .
-              </h1>
-
-              <p className="max-w-md text-lg leading-7 text-_gray">
-                Based in the UK, I&apos;m a front-end developer passionate about
-                building accessible web apps that users love.
-              </p>
-
-              <Link href={"#contact"}>
-                <Button text="contact me" />
-              </Link>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -left-16 bottom-16">
-              <PatternCircle />
-            </div>
-            <Image
-              src={"/image-profile-desktop.webp"}
-              alt=""
-              width={445}
-              height={720}
-            />
-          </div>
-        </div>
-
-        <hr className="border-_gray" />
-
-        <div className="relative mt-[72px] grid grid-cols-2 gap-16 lg:grid-cols-3">
-          <div className="flex  flex-col gap-[14px]">
-            <p className="heading-lg">HTML</p>
-            <p className="text-_gray">4 Years Experience</p>
-          </div>
-          <div className="flex  flex-col gap-[14px]">
-            <p className="heading-lg">CSS</p>
-            <p className="text-_gray">4 Years Experience</p>
-          </div>
-          <div className="flex  flex-col gap-[14px]">
-            <p className="heading-lg">JavaScript</p>
-            <p className="text-_gray">4 Years Experience</p>
-          </div>
-          <div className="flex  flex-col gap-[14px]">
-            <p className="heading-lg">Accessibility</p>
-            <p className="text-_gray">4 Years Experience</p>
-          </div>
-          <div className="flex  flex-col gap-[14px]">
-            <p className="heading-lg">React</p>
-            <p className="text-_gray">3 Years Experience</p>
-          </div>
-          <div className="flex  flex-col gap-[14px]">
-            <p className="heading-lg">Sass</p>
-            <p className="text-_gray">3 Years Experience</p>
-          </div>
-          <div className="absolute -bottom-1/4 -right-[40%]">
-            <PatternRings />
-          </div>
-        </div>
-      </main>
-
-      <section className="container my-36 flex max-w-6xl flex-col gap-20 px-8 lg:mx-auto">
+      <section className="my-36 flex flex-col gap-20 px-4 tablet:px-8 desktop:px-40">
         <div className="flex items-center justify-between">
-          <h2 className="heading-xl">Projects</h2>
+          <h2 className="heading-xs tablet:text-7xl tablet:leading-[72px] tablet:tracking-[-2.05] desktop:text-_heading-xl desktop:leading-_heading-xl desktop:tracking-_heading-xl">
+            Projects
+          </h2>
           <Link href={"#contact"}>
             <Button text="contact me" />
           </Link>
@@ -129,37 +52,25 @@ const Home: NextPage = () => {
       </section>
 
       <section id="contact" className="bg-_darkgray">
-        <div className="container relative flex max-w-6xl grid-cols-2 flex-col items-center justify-center gap-40 px-8 py-20 lg:mx-auto lg:grid lg:items-start">
+        <div className="relative flex grid-cols-2 flex-col items-center justify-center gap-8 px-4 py-20 tablet:px-8 desktop:grid desktop:items-start desktop:px-40">
           <div className="max-w-md text-center lg:text-left">
-            <h2 className="heading-xl">Contact</h2>
-            <p className="mt-9 text-lg text-_gray">
+            <h2 className="heading-xs tablet:text-7xl tablet:leading-[72px] tablet:tracking-[-2.05] desktop:text-_heading-xl desktop:leading-_heading-xl desktop:tracking-_heading-xl">
+              Contact
+            </h2>
+            <p className="mt-9 font-medium text-_gray mobile:leading-[26px] tablet:text-lg tablet:leading-7">
               I would love to hear about your project and how I could help.
               Please fill in the form, and I&apos;ll get back to you as soon as
               possible.
             </p>
           </div>
           <ContactForm />
-          <div className="absolute -left-1/3 bottom-8">
+          {/* <div className="absolute -left-1/3 bottom-8">
             <PatternRings />
-          </div>
+          </div> */}
         </div>
+        <hr className="mx-4 text-_gray tablet:mx-8 desktop:mx-40" />
       </section>
-
-      <footer className="bg-_darkgray">
-        <div className="container max-w-6xl px-8 lg:mx-auto">
-          <div className="flex w-full items-center justify-between border-t border-_gray py-8">
-            <span className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
-              adamkeyes
-            </span>
-            <menu className="flex gap-8">
-              <Github />
-              <FrontendMentor />
-              <LinkedIn />
-              <Twitter />
-            </menu>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

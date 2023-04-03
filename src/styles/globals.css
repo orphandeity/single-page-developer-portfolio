@@ -13,3 +13,16 @@
 .heading-md {
   @apply text-_heading-md font-bold leading-_heading-md;
 }
+
+.body {
+  @apply text-lg font-medium leading-7;
+}
+
+.heading-xs {
+  @apply text-[40px] font-bold leading-[40px] tracking-[-1.14px];
+}
+
+html,
+body {
+  width: 100%;
+}
