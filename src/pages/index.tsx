@@ -39,14 +39,14 @@ const Home: NextPage = () => {
               <span className="text-[32px] font-bold leading-[32px] tracking-[-0.44px]">
                 adamkeyes
               </span>
-              <menu className="mr-8 flex gap-8">
+              <menu className="z-50 mr-8 flex gap-8">
                 <Github />
                 <FrontendMentor />
                 <LinkedIn />
                 <Twitter />
               </menu>
             </header>
-            <div className="relative z-50 flex flex-col items-start gap-12">
+            <div className="relative z-20 flex flex-col items-start gap-12">
               <div className="absolute -translate-x-1/2">
                 <PatternRings />
               </div>
