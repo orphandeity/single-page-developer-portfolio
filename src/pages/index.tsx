@@ -71,7 +71,36 @@ const Home: NextPage = () => {
         <hr className="mx-4 text-_gray tablet:mx-8 desktop:mx-40" />
       </section>
       <Footer />
+      <Attribution />
     </>
+  );
+};
+
+const Attribution = () => {
+  return (
+    <div className="flex w-full justify-center gap-2 bg-_darkgray py-4 text-xs text-_gray desktop:text-sm">
+      <p>
+        Challenge by{" "}
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          className="text-_green"
+        >
+          Frontend Mentor
+        </a>
+        .
+      </p>
+      <p>
+        Coded by{" "}
+        <a
+          href="https://www.frontendmentor.io/profile/orphandeity"
+          className="text-_green"
+        >
+          Jeff R Williams
+        </a>
+        .
+      </p>
+    </div>
   );
 };
 
