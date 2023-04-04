@@ -39,8 +39,8 @@ const HeroSection = () => {
         <div className="absolute bottom-1/2 right-0 z-50 translate-x-20 opacity-70 tablet:bottom-0 tablet:translate-x-16 desktop:bottom-20 desktop:right-1/3">
           <PatternCircle />
         </div>
-        <div className="z-20">
-          {size.width! >= 1440 ? (
+        <div className="z-10 tablet:z-0">
+          {size.width! >= 1044 ? (
             <Image
               src={"/image-profile-desktop.webp"}
               alt=""
@@ -64,8 +64,8 @@ const HeroSection = () => {
           )}
         </div>
 
-        <div className="inset-0 tablet:absolute tablet:pt-28">
-          <div className="z-20 flex flex-col items-center gap-12 text-center tablet:items-start tablet:text-left">
+        <div className="inset-0 tablet:absolute tablet:pt-24">
+          <div className="z-30 flex flex-col items-center gap-12 text-center tablet:items-start tablet:text-left">
             <h1 className="heading-xs mt-16 max-w-xl tablet:text-7xl tablet:leading-[72px] tablet:tracking-[-2.05] lg:max-w-3xl desktop:text-_heading-xl desktop:leading-_heading-xl desktop:tracking-_heading-xl">
               Nice to {size.width! < 1024 && <br />} meet you! I&apos;m{" "}
               <span className="underline decoration-_green underline-offset-[20px]">
