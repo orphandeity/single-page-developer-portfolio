@@ -15,7 +15,7 @@ const HeroSection = () => {
   const size = useWindowSize();
 
   return (
-    <main className="relative mx-4 tablet:ml-8 tablet:mr-0 desktop:ml-40">
+    <main className="relative mx-4 tablet:ml-8 tablet:mr-0 desktop:mx-40">
       <header className="absolute flex w-full flex-col items-center justify-between gap-5 pt-5 tablet:flex-row tablet:gap-0 tablet:pb-16 tablet:pt-10">
         <span className="z-50 text-2xl font-bold leading-[32px] tracking-[-0.44px] tablet:text-[32px]">
           adamkeyes
@@ -36,7 +36,7 @@ const HeroSection = () => {
         <div className="absolute top-28 -translate-x-1/2 opacity-80 tablet:-left-8">
           <PatternRings />
         </div>
-        <div className="absolute bottom-1/2 right-0 z-50 translate-x-20 opacity-70 tablet:bottom-0 tablet:translate-x-16 desktop:bottom-20 desktop:right-1/3">
+        <div className="absolute bottom-1/2 right-0 z-50 translate-x-20 opacity-70 tablet:bottom-0 tablet:translate-x-16 desktop:bottom-20 desktop:right-1/3 desktop:translate-x-0">
           <PatternCircle />
         </div>
         <div className="z-10 tablet:z-0">
@@ -86,8 +86,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <hr className="mt-20 border-_gray tablet:mr-8 tablet:mt-16 desktop:mr-40 desktop:mt-28" />
-      <div className="absolute -right-[110%] -translate-y-16 opacity-80 tablet:-right-80 tablet:bottom-0 tablet:translate-y-1/2 desktop:-right-72 desktop:translate-y-28">
+      <hr className="mt-20 border-_gray tablet:mr-8 tablet:mt-16 desktop:mr-0 desktop:mt-28" />
+      <div className="absolute -right-[110%] -translate-y-16 opacity-80 tablet:-right-80 tablet:bottom-0 tablet:translate-y-1/2 desktop:translate-x-24 desktop:translate-y-20">
         <PatternRings />
       </div>
 
