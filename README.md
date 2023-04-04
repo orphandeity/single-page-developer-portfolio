@@ -4,16 +4,13 @@ This is a solution to the [Single-page developer portfolio challenge on Frontend
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-  - [Built with](#built-with)
-  - [Author](#author)
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [Built with](#built-with)
+- [Author](#author)
 
-## Overview
-
-### The challenge
+## The challenge
 
 Users should be able to:
 
@@ -25,16 +22,27 @@ Users should be able to:
 - **Bonus**: Hook the form up so it sends and stores the user's enquiry (you can use a spreadsheet or Airtable to save the enquiries)
 - **Bonus**: Add your own details (image, skills, projects) to replace the ones in the design
 
-### Screenshot
+## Screenshot
 
-![](./screenshot.jpg)
+### Desktop
 
-### Links
+![](./public/screenshots/screenshot-desktop-1.jpg)
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+### Tablet
 
-### Built with
+![](./public/screenshots/screenshot-tablet-2.jpg)
+
+### Mobile
+
+![](./public/screenshots/screenshot-mobile-1.jpg)
+![](./public/screenshots/screenshot-mobile-2.jpg)
+
+## Links
+
+- Solution URL: [GitHub](https://github.com/orphandeity/single-page-developer-portfolio.git)
+- Live Site URL: [Vercel](https://single-page-developer-portfolio-swart.vercel.app/)
+
+## Built with
 
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
