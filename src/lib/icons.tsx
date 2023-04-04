@@ -80,5 +80,3 @@ export const PatternRings = () => (
     </g>
   </svg>
 );
-
-// width={530} height={129}

@@ -21,21 +21,25 @@ const HeroSection = () => {
           adamkeyes
         </span>
         <menu className="z-30 flex scale-75 gap-8 tablet:mr-8 tablet:scale-100">
-          <Github />
-          <FrontendMentor />
+          <a href="https://github.com/orphandeity">
+            <Github />
+          </a>
+          <a href="https://www.frontendmentor.io/profile/orphandeity">
+            <FrontendMentor />
+          </a>
           <LinkedIn />
           <Twitter />
         </menu>
       </header>
 
-      <div className="relative mb-28 flex flex-col items-center justify-end tablet:relative tablet:flex-row">
-        {/* <div className="absolute -left-full top-32 tablet:-left-1/3 tablet:top-0">
+      <div className="relative flex flex-col items-center justify-end tablet:flex-row">
+        <div className="absolute top-28 -translate-x-1/2 opacity-80 tablet:-left-8">
           <PatternRings />
-        </div> */}
-        <div className="relative">
-          {/* <div className="absolute -right-40 bottom-0 tablet:-left-16 tablet:bottom-16">
-            <PatternCircle />
-          </div> */}
+        </div>
+        <div className="absolute bottom-1/2 right-0 z-50 translate-x-20 opacity-70 tablet:bottom-0 tablet:translate-x-16 desktop:bottom-20 desktop:right-1/3">
+          <PatternCircle />
+        </div>
+        <div className="z-20">
           {size.width! >= 1440 ? (
             <Image
               src={"/image-profile-desktop.webp"}
@@ -82,10 +86,13 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <hr className="border-_gray" />
+      <hr className="mt-20 border-_gray tablet:mr-8 tablet:mt-16 desktop:mr-40 desktop:mt-28" />
+      <div className="absolute -right-[110%] -translate-y-16 opacity-80 tablet:-right-80 tablet:bottom-0 tablet:translate-y-1/2 desktop:-right-72 desktop:translate-y-28">
+        <PatternRings />
+      </div>
 
-      <div className="relative mt-[72px] grid grid-cols-1 justify-items-center gap-16 tablet:grid-cols-2 tablet:justify-items-start desktop:grid-cols-3">
-        <div className="flex  flex-col items-center gap-[14px] tablet:items-start">
+      <div className="mt-10 grid grid-cols-1 justify-items-center gap-6 tablet:mt-[72px] tablet:grid-cols-2 tablet:justify-items-start tablet:gap-16 desktop:grid-cols-3">
+        <div className="flex  flex-col items-center gap-0 tablet:items-start tablet:gap-[14px]">
           <p className="text-[30px] font-bold leading-[40px] tracking-[-1px] tablet:text-_heading-lg tablet:leading-_heading-lg tablet:tracking-_heading-lg">
             HTML
           </p>
@@ -93,7 +100,7 @@ const HeroSection = () => {
             4 Years Experience
           </p>
         </div>
-        <div className="flex  flex-col items-center gap-[14px] tablet:items-start">
+        <div className="flex  flex-col items-center gap-0 tablet:items-start tablet:gap-[14px]">
           <p className="text-[30px] font-bold leading-[40px] tracking-[-1px] tablet:text-_heading-lg tablet:leading-_heading-lg tablet:tracking-_heading-lg">
             CSS
           </p>
@@ -101,7 +108,7 @@ const HeroSection = () => {
             4 Years Experience
           </p>
         </div>
-        <div className="flex  flex-col items-center gap-[14px] tablet:items-start">
+        <div className="flex  flex-col items-center gap-0 tablet:items-start tablet:gap-[14px]">
           <p className="text-[30px] font-bold leading-[40px] tracking-[-1px] tablet:text-_heading-lg tablet:leading-_heading-lg tablet:tracking-_heading-lg">
             JavaScript
           </p>
@@ -109,7 +116,7 @@ const HeroSection = () => {
             4 Years Experience
           </p>
         </div>
-        <div className="flex  flex-col items-center gap-[14px] tablet:items-start">
+        <div className="flex  flex-col items-center gap-0 tablet:items-start tablet:gap-[14px]">
           <p className="text-[30px] font-bold leading-[40px] tracking-[-1px] tablet:text-_heading-lg tablet:leading-_heading-lg tablet:tracking-_heading-lg">
             Accessibility
           </p>
@@ -117,7 +124,7 @@ const HeroSection = () => {
             4 Years Experience
           </p>
         </div>
-        <div className="flex  flex-col items-center gap-[14px] tablet:items-start">
+        <div className="flex  flex-col items-center gap-0 tablet:items-start tablet:gap-[14px]">
           <p className="text-[30px] font-bold leading-[40px] tracking-[-1px] tablet:text-_heading-lg tablet:leading-_heading-lg tablet:tracking-_heading-lg">
             React
           </p>
@@ -125,7 +132,7 @@ const HeroSection = () => {
             3 Years Experience
           </p>
         </div>
-        <div className="flex  flex-col items-center gap-[14px] tablet:items-start">
+        <div className="flex  flex-col items-center gap-0 tablet:items-start tablet:gap-[14px]">
           <p className="text-[30px] font-bold leading-[40px] tracking-[-1px] tablet:text-_heading-lg tablet:leading-_heading-lg tablet:tracking-_heading-lg">
             Sass
           </p>
@@ -133,10 +140,9 @@ const HeroSection = () => {
             3 Years Experience
           </p>
         </div>
-        {/* <div className="absolute -bottom-1/4 -right-[40%]">
-          <PatternRings />
-        </div> */}
       </div>
+
+      <hr className="mt-10 border-_gray tablet:mt-0 tablet:hidden " />
     </main>
   );
 };

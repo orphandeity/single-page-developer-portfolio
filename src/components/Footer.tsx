@@ -9,8 +9,12 @@ const Footer = () => {
             adamkeyes
           </span>
           <menu className="z-30 flex scale-75 gap-8 tablet:scale-100">
-            <Github />
-            <FrontendMentor />
+            <a href="https://github.com/orphandeity">
+              <Github />
+            </a>
+            <a href="https://www.frontendmentor.io/profile/orphandeity">
+              <FrontendMentor />
+            </a>
             <LinkedIn />
             <Twitter />
           </menu>

@@ -64,9 +64,9 @@ const Home: NextPage = () => {
             </p>
           </div>
           <ContactForm />
-          {/* <div className="absolute -left-1/3 bottom-8">
+          <div className="absolute -left-full bottom-20 opacity-80 tablet:bottom-8 tablet:left-0 tablet:-translate-x-full desktop:-translate-x-1/2">
             <PatternRings />
-          </div> */}
+          </div>
         </div>
         <hr className="mx-4 text-_gray tablet:mx-8 desktop:mx-40" />
       </section>
