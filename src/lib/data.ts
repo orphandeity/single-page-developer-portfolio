@@ -11,8 +11,8 @@ export const projects: Project[] = [
     title: "Design Portfolio",
     tech: ["HTML", "CSS"],
     image: "/thumbnail-project-1-small.webp",
-    codeUrl: "",
-    projectUrl: "",
+    codeUrl: "https://github.com/orphandeity/single-page-design-portfolio",
+    projectUrl: "https://orphandeity.github.io/single-page-design-portfolio",
   },
   {
     title: "E-learning landing page",
